@@ -10,7 +10,6 @@ package square
 
 import (
 	"math"
-	"golang.org/x/text/cases"
 )
 
 type TypeSideNum int
