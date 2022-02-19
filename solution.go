@@ -8,5 +8,25 @@ package square
 // CalcSquare(10.0, SidesSquare)
 // CalcSquare(10.0, SidesCircle)
 
-func CalcSquare(sideLen float64, sidesNum #yourTypeNameHere#) float64 {
+import (
+	"math"
+	"golang.org/x/text/cases"
+)
+
+type TypeSideNum int
+
+const SidesCircle TypeSideNum = 0
+const SidesTriangle TypeSideNum = 3
+const SidesSquare TypeSideNum = 4
+
+func CalcSquare(sideLen float64, sidesNum TypeSideNum) float64 {
+	switch sidesNum {
+	case SidesCircle:
+		return math.Pi * math.Pow(float64(sideLen), 2)
+	case SidesTriangle:
+		return (math.Sqrt(3) / 4) * math.Pow(float64(sideLen), 2)
+	case SidesSquare:
+		return math.Pow(float64(sideLen), 2)
+	}
+	return 0
 }
